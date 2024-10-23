@@ -1,5 +1,7 @@
 import localFont from "next/font/local";
+import 'antd/dist/reset.css'
 import "./globals.css";
+import AppHeader from "./components/Header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,9 +22,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400&display=swap" rel="stylesheet" />
+      </head>
+      <body>
+        <AppHeader />
         {children}
       </body>
     </html>
